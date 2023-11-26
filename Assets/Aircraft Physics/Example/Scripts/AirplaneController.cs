@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class AirplaneController : MonoBehaviour
 {
+    public AircraftControls aircraftControls;
+
     [SerializeField]
     List<AeroSurface> controlSurfaces = null;
     [SerializeField]
@@ -32,6 +35,21 @@ public class AirplaneController : MonoBehaviour
     AircraftPhysics aircraftPhysics;
     Rigidbody rb;
 
+    private void Awake()
+    {
+        aircraftControls = new AircraftControls();
+    }
+
+    private void OnEnable()
+    {
+        aircraftControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        aircraftControls.Disable();
+    }
+
     private void Start()
     {
         aircraftPhysics = GetComponent<AircraftPhysics>();
@@ -40,9 +58,12 @@ public class AirplaneController : MonoBehaviour
 
     private void Update()
     {
-        Pitch = Input.GetAxis("Vertical");
-        Roll = Input.GetAxis("Horizontal");
-        Yaw = Input.GetAxis("Yaw");
+        //Pitch = Input.GetAxis("Vertical");
+        Pitch = aircraftControls.Aircraft.Pitch.ReadValue<Vector2>().y;
+        //Roll = Input.GetAxis("Horizontal");
+        Roll = aircraftControls.Aircraft.Roll.ReadValue<Vector2>().x;
+        //Yaw = Input.GetAxis("Yaw");
+        Yaw = aircraftControls.Aircraft.Yaw.ReadValue<Vector2>().x;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

@@ -1,0 +1,74 @@
+{
+    "name": "Aircraft Controls",
+    "maps": [
+        {
+            "name": "Aircraft",
+            "id": "1d6318fe-ab16-4f8c-bb43-26bc1db02d3e",
+            "actions": [
+                {
+                    "name": "Pitch",
+                    "type": "Value",
+                    "id": "767768d4-00ac-432e-a35d-738dea8a068f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Roll",
+                    "type": "Value",
+                    "id": "039886a5-36f3-4df1-be42-ee5078337ab3",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Yaw",
+                    "type": "Value",
+                    "id": "72af519f-5190-4929-ab7e-6554df57a579",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "57eb2f42-453f-4f59-88c7-cd067e8f9bf4",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "40cf2a6a-2f58-4655-8fee-452e6972cd2e",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7727d48-f925-41ba-9ebb-2d9f6c62f211",
+                    "path": "<XInputController>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yaw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
